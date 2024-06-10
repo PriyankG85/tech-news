@@ -4,15 +4,15 @@ import { useState, useEffect } from "react";
 const fetchNews = async (setNews, setLoading, keyword) => {
   let url = `https://newsdata.io/api/1/news?apikey=pub_45839938692f176e3d72e4b67a8a6ffb22424&q=${keyword}&language=en&category=technology`;
 
-  // fetch(url)
-  //   .then((res) => {
-  //     return res.json();
-  //   })
-  //   .then((data) => {
-  //     setLoading;
-  //     setNews(data.results);
-  //     setLoading(false);
-  //   });
+  fetch(url)
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      setLoading;
+      setNews(data.results);
+      setLoading(false);
+    });
 };
 
 const NewsSection = () => {
